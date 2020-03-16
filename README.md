@@ -141,3 +141,15 @@ docker run --network moodle-net -d -p 80:80 -p 443:443 --name web -v $(pwd)/mood
 
 ## Installing the moodle in the browser
 ### Finishing the setting up in the browser
+
+## pgAdmin4 Container
+### Running pgAdmin4 container for Postgres
+```
+docker pull dpage/pgadmin4
+docker run -p 8080:80 \
+    --network moodle-net \
+    --name pgadmin4 \
+    -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' \
+    -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' \
+    -d dpage/pgadmin4
+```
