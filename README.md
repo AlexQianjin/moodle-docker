@@ -1,4 +1,4 @@
-# moodle-docker
+# How To Install Moodle via git with Postgres, Nginx and Php-fpm docker images on Ubuntu 18.04
 Install Moodle by docker with nginx, php-fpm and postgres images. And also using LetsEncrypt for HTTPS on Ubuntu 18.04.
 
 ## Getting the certificates from LetsEncrypt by Certbot
@@ -136,7 +136,7 @@ nano moodle-docker/nginx/site.conf
 ### Step 2 - Running the nginx container
 ```
 cd ~/
-docker run --network moodle-net -d -p 80:80 --name web -v $(pwd)/moodle:/var/www/html -v $(pwd)/moodler-docker/nginx/conf.d/:/etc/nginx/conf.d/ -v /usr/local/moodledata:/usr/local/moodledata nginx:alpine
+docker run --network moodle-net -d -p 80:80 -p 443:443 --name web -v $(pwd)/moodle:/var/www/html -v $(pwd)/moodler-docker/nginx/conf.d/:/etc/nginx/conf.d/ -v /usr/local/moodledata:/usr/local/moodledata nginx:alpine
 ```
 
 ## Installing the moodle in the browser
