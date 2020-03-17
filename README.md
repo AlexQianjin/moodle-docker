@@ -18,10 +18,17 @@ sudo ufw allow 80
 sudo certbot certonly --standalone --preferred-challenges http -d el.alexqin.cn
 ```
 
-### Step 3 - Listing Certificates
+### Step 3 - Listing the Certificates
 ```
 sudo chmod -R 755 /etc/letsencrypt/live/el.alexqin.cn
 sudo ls /etc/letsencrypt/live/el.alexqin.cn
+```
+
+### Step 4 - Getting the Certificates' information
+```
+cd ~/
+openssl x509 -noout -text -in /etc/letsencrypt/live/el.alexqin.cn/fullchain.pem
+openssl rsa -noout -text -in /etc/letsencrypt/live/el.alexqin.cn/privkey.pem
 ```
 
 ## Installing Git and Docker
