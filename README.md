@@ -143,7 +143,7 @@ nano moodle-docker/nginx/site.conf
 ### Step 2 - Running the nginx container
 ```
 cd ~/
-docker run --network moodle-net -d -p 80:80 -p 443:443 --name web -v $(pwd)/moodle:/var/www/html -v $(pwd)/moodler-docker/nginx/conf.d/:/etc/nginx/conf.d/ -v /usr/local/moodledata:/usr/local/moodledata nginx:alpine
+docker run --network moodle-net -d -p 80:80 -p 443:443 --name web -v $(pwd)/moodle:/var/www/html -v $(pwd)/moodle-docker/nginx/conf.d/:/etc/nginx/conf.d/ -v /usr/local/moodledata:/usr/local/moodledata nginx:alpine
 ```
 
 ## Installing the moodle in the browser
